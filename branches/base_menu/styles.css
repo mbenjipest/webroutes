@@ -1,0 +1,240 @@
+/*<hunk name="Theme">*/
+	/*~title-fg  =#FFFFFF~*/
+	/*~title-bg  =#333366~*/
+	
+	/*~fg0       =#FFFFFF~*//*main text*/
+	/*~fg1       =#DDDDDD~*//*item text*/
+	/*~fg2       =#AAAAAA~*//*item sub-text*/
+	/*~fg3       =#242440~*//*input border*/
+	/*~fg4       =#EEEEEE~*//*button text*/
+
+	/*~bg0       =#000000~*//*Background, input background*/
+	/*~bg1       =#080808~*//*List items*/
+	/*~bg2       =#101010~*//*Form Label*/
+	/*~bg3       =#12120E~*//*Detail background*/
+	/*~bg4       =#12120E~*//*Login background*/
+	/*~bg5       =#222222~*//*Feedback background*/
+
+
+	/*~fg_affirm =#88FF88~*/
+	/*~fg_cancel =#FF8888~*/
+
+	/*~bg_affirm =#005500~*/
+	/*~bg_cancel =#550000~*/
+	/*~bg_modify =#000055~*/
+
+	/*~fg-color1 =#347CDC~*//*blue*/
+	/*~fg-color2 =#3688BA~*//*dark blue*/
+	/*~fg-color3 =#155BC9~*//*button blue*/
+	/*~fg-color4 =#3FBD7D~*//*green*/
+	/*~fg-color5 =#149A14~*//*light_green*/
+	/*~fg-color6 =#23A739~*//*button green*/
+	/*~fg-color7 =#FC3E39~*//*red*/
+
+	/*~menu-fg1  =#145CA9~*//*blue menu*/
+	/*~menu-fg2  =#929292~*//*menu label unselected*/
+	/*~menu-bg   =#000000~*/
+
+	/*~calendar0 =#A3A7AF~*//*grid*/
+	/*~calendar1 =#89909A~*//*other   month date*/
+	/*~calendar2 =#3F4E5E~*//*current month date*/
+	/*~calendar3 =#29AAFA~*//*selected date*/
+	/*~overlay   =rgba(0,0,0,0.3)~*/
+	/*~error     =#FF0000~*/
+	/*~transition-time = 400ms~*/
+	/*~transition=__transition-time__ cubic-bezier(0.4, 0.0, 0.2, 1)~*/
+/*</hunk>*/
+
+/*<hunk name="Navigation_augments">*/
+	.page, .page_stale{
+		box-shadow: 
+			1px  0 0 0 #000,
+			-1px 0 0 0 #000;
+		background-color: __bg0__;
+		height:100%; overflow:auto;
+	}
+/*</hunk>*/
+
+/*<hunk name="General">*/
+	body{
+		font-size: 1em;
+		font-family: "Arial";
+		margin:0; padding:0;
+		color:__fg0__;
+		background-color:__bg0__;
+		overflow: hidden;
+	}
+	a{
+		color:inherit;
+		cursor:pointer;
+		text-decoration: none;
+	}
+	#page_container{ 
+		position:absolute; top: 0; right:0; bottom:__menu-height__; left:0;
+		overflow-x:hidden;
+		overflow-y:auto;
+	}
+	.page,.page_stale{
+
+	}
+/*</hunk>*/
+
+/*<hunk name="Scrollbar">*/
+	::-webkit-scrollbar {
+		height: .25em;
+		width: .5em;
+	}
+	::-webkit-scrollbar-track {
+		-webkit-box-shadow: inset 0 0 .375em rgba(100,100,100,.3);
+		border-radius: .625em;
+	}
+	::-webkit-scrollbar-thumb {
+		border-radius: .625em;
+		-webkit-box-shadow: inset 0 0 .375em rgba(200,200,200,.7);
+		background-color:rgba(0, 0, 0, 0.5);
+	}
+/*</hunk>*/
+
+/*<hunk name="global_timer">*/
+#time_container{
+	position:absolute;
+	top:0; left:0; right:0;
+	vertical-align: middle;
+	font-size: .75em;
+	height:1em;
+	padding: .25em;
+	z-index: 9001;
+	text-align:center;
+}
+/*</hunk>*/
+
+/*<hunk name="Menu">*/
+	/*~menu-height=3em~*/
+	.menu{
+		position: absolute; bottom: 0; left: 0; right:0;
+		display:flex;flex-flow: row nowrap;
+		justify-content: center;
+		height:__menu-height__;
+		color: __menu-fg1__;
+		background-color: __menu-bg__;
+		overflow: auto;
+	}
+	.menu_item{
+		font-size:.625em;
+		height:100%;
+		width:auto;
+		min-width:5em;
+		display:flex;
+		flex-flow: column nowrap;
+		justify-content: space-around;
+		white-space:nowrap;
+		text-align:center;
+		border-right: 1px solid __menu-fg1__;
+		padding: 0 .5em;
+		background-color: __menu-bg__;
+	}
+	.menu_item:last-of-type{
+		border-right:0;
+	}
+	.menu_icon{
+		height:2.5em; line-height:2.5em;
+		width:2.5em;
+		margin: 0 auto;
+		border: 1px solid __fg-color1__;
+		border-radius:1em;
+
+		font-weight: bold;
+		text-shadow: 1px 1px __bg1__;
+	}
+/*</hunk>*/
+
+/*<hunk name="input">*/
+	.input_block{
+		display:flex; flex-flow: row nowrap;
+		justify-content: space-between;
+		font-size:.4cm;
+		border-bottom:1px solid __fg3__;
+	}
+	.input_label, .input_guts{
+		position:relative;
+		display:inline-block;
+		width:50%;
+		padding: 1em 0 1em 1em;
+	}
+	.input_label{
+		background:__bg2__;
+	}
+	.input_label_text{
+		font-size:1.2em;
+		font-weight:400;
+	}
+	.input_stretch{
+		position:absolute; top:0; right:2em; bottom:0; left:0;
+	}
+	.input_clear{
+		position:absolute; top:0; right:0; bottom:0;
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: space-around;
+		width:2em;
+		text-align:center;
+		cursor:pointer;
+		background:__bg0__;
+	}
+	.input_whole{
+		font-size:1.25em;
+		display:block;
+		width:100%;
+		height:100%;
+		padding:.5em;
+		box-sizing: border-box;
+		border: none;
+		outline:none;
+		color:__fg0__;
+		background:__bg0__;
+	}
+/*</hunk>*/
+
+/*<hunk name="Login_page">*/
+	.login_page{
+		background: __bg4__;
+		min-height:100%;
+	}
+	.login_title{
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: space-around;
+		text-align:center;
+		height: 2.5em;
+		padding-top: 1.25em;
+		background-color: __title-bg__;
+		color: __title-fg__;
+	}
+	.login_buttons{
+		display:flex;flex-flow: row nowrap;
+		justify-content: space-around;
+		margin-top: 2em;
+	}
+	.login_button, .logout_button{
+		font-size:1em;
+		width:40%;
+		height:2em;
+		box-sizing: border-box;
+		padding:.25em;
+		border:0;
+		border-radius:.25em;
+		text-align: center;
+		font-weight: bold;
+		color: __fg4__;
+	}
+	.logout_button{
+		background-color:__fg-color7__;
+	}
+	.login_button{
+		background-color:__fg-color6__;
+	}
+	.login_status{
+		text-align: center;
+		padding: .25em;
+	}
+/*</hunk>*/

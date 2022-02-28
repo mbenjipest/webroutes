@@ -1,0 +1,42 @@
+/*<hunk name="Theme">*/
+/*this is really just a hard copy as the default theme is dark*/
+    /*~title-fg  =#FFFFFF~*/
+    /*~title-bg  =#333366~*/
+    
+    /*~fg0       =#FFFFFF~*//*main text*/
+    /*~fg1       =#DDDDDD~*//*item text*/
+    /*~fg2       =#AAAAAA~*//*item sub-text*/
+    /*~fg3       =#242440~*//*input border*/
+    /*~fg4       =#EEEEEE~*//*button text*/
+
+    /*~bg0       =#000000~*//*Background, input background*/
+    /*~bg1       =#101010~*//*List items*/
+    /*~bg2       =#202020~*//*Form Label*/
+    /*~bg3       =#12120E~*//*Detail background*/
+    /*~bg4       =#12120E~*//*Login background*/
+    /*~bg5       =#222222~*//*Feedback background*/
+
+    /*~fg-color1 =#347CDC~*//*blue*/
+    /*~fg-color2 =#3688BA~*//*dark blue*/
+    /*~fg-color3 =#155BC9~*//*button blue*/
+    /*~fg-color4 =#3FBD7D~*//*green*/
+    /*~fg-color5 =#149A14~*//*light_green*/
+    /*~fg-color6 =#23A739~*//*button green*/
+    /*~fg-color7 =#FC3E39~*//*red*/
+
+    /*~menu-fg1  =#145CA9~*//*blue menu*/
+    /*~menu-fg2  =#929292~*//*menu label unselected*/
+    /*~menu-bg   =#000000~*/
+
+    /*~calendar0 =#A3A7AF~*//*grid*/
+    /*~calendar1 =#89909A~*//*other   month date*/
+    /*~calendar2 =#3F4E5E~*//*current month date*/
+    /*~calendar3 =#29AAFA~*//*selected date*/
+    /*~overlay   =rgba(0,0,0,0.3)~*/
+    /*~error     =#FF0000~*/
+    /*~transition-time = 400ms~*/
+    /*~transition=__transition-time__ cubic-bezier(0.4, 0.0, 0.2, 1)~*/
+/*</hunk>*/
+button{
+    text-shadow: 0px 1px 0px #000;
+}
