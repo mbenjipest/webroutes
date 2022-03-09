@@ -58,6 +58,7 @@ Templating syntax
 	[-[~Template_[&#x200B;[some_key]]]]
 	[-[~Template,  {"any":"json"}  ]]
 	[-[~Template]]
+	[-[some.deep.key]]
 	[-[some_key]]
 	[&#x200B;-[some_delimited_expression]]
 CSS Variable Syntax

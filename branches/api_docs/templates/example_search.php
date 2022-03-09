@@ -88,15 +88,11 @@ apiModule.search('ticket',{
 },1).then(apiModule.downloadJSON);
 </code>
 
-
-
-
-<h3>Download customers</h3>
+<h3>Download all customers globally</h3>
 <button class='run'>Execute</button>
 <code class='example_code'>
 apiModule.search('customer',{
 	'officeIDs':0,
-	'phone':'5558675309',
 	'includeData':1
-}).then(console.log);
+},1).then(apiModule.download);
 </code>

@@ -15,10 +15,19 @@ API documentation on individual endpoints can be found <a class='navigation_anch
 	<nav class='example_nav'>
 		<h4 class='example_nav_header'>Index</h4>
 		<a href='#example_search' class='example_nav_item'>Search Examples</a>
+		<a href='#example_customer_create' class='example_nav_item'>Create/Update customers</a>
+		<a href='#example_subscription_create' class='example_nav_item'>Create/Update subscriptions and leads</a>
+		<a href='#example_payment_profile_create' class='example_nav_item'>Create/Update a Payment Profile</a>
 		<a href='#example_old_examples' class='example_nav_item'>Older Examples</a>
 	</nav>
 	
 	[[~example_section, {'example':'search','title':'Search Examples'} ]]
+	
+	[[~example_section, {'example':'customer_create','title':'Create/Update customers'} ]]
+	
+	[[~example_section, {'example':'subscription_create','title':'Create/Update subscriptions and leads'} ]]
+	
+	[[~example_section, {'example':'payment_profile_create','title':'Create/Update a Payment Profile'} ]]
 	
 	[[~example_section, {'example':'old_examples','title':'Older Examples'} ]]
 </section><script id="[[Template_id]]_driver">

@@ -5,8 +5,8 @@
 		Resources:
 		<a class='navigation_anchor' page='documentation' data='' href='/documentation'>
 		<span class='home_icons'>📗</span> <u>Documentation on individual endpoints</u></a>
-		<a class='navigation_anchor' page='request_builder' data='' href='/request_builder'>
-		<span class='home_icons'>🔨</span> <u>Tool for prototyping request payloads</u></a>
+		<a class='navigation_anchor' page='tools' data='' href='/tools'>
+		<span class='home_icons'>🔨</span> <u>Tools</u></a>
 		<a class='navigation_anchor' page='examples' data='' href='/examples'>
 		<span class='home_icons'>👨‍🏫</span> <u>Examples and workflows</u></a>
 		<a class='navigation_anchor' page='faq' data='' href='/faq'>

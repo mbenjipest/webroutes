@@ -7,9 +7,9 @@
 		<div class='menu_icon'><span>📗</span></div>
 		Endpoints
 	</a>
-	<a class='navigation_anchor menu_item' href='/request_builder' page='request_builder'>
+	<a class='navigation_anchor menu_item' href='/tools' page='tools'>
 		<div class='menu_icon'><span>🔨</span></div>
-		Request Builder
+		Tools
 	</a>
 	<a class='navigation_anchor menu_item' href='/examples' page='examples'>
 		<div class='menu_icon'><span>👨‍🏫</span></div>

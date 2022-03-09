@@ -111,8 +111,8 @@ Class Temp{ // Compiled Templates | CSS Variables | Live Patching | Live Branchi
 			$temp['Shell']=file_exists($dir.'/shell.php');
 			$temp['Templates']='';
 			foreach(glob('branches/'.$branch.'/templates/*.php') as $template){
-				preg_match('@/(.*)\.php$@', $template, $matches);
-				$temp['Templates'].=' '.$matches[0].',';
+				preg_match('@/([^/]*?)\.php$@', $template, $matches);
+				$temp['Templates'].=' '.$matches[1].',';
 			}
 			$temp['Templates']=rtrim($temp['Templates'],',');
 			

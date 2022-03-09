@@ -1,6 +1,7 @@
 $(function(){
 	window.apiModule = (function(){
 		var base_url,keys, tokens, names, queryProfileToken;
+		//(PRAdmin) Add queryProfileToken to each call if set in localStorage
 		queryProfileToken=localStorage.queryProfileToken||false;
 		normalModel=0;
 		var m = {};
@@ -61,23 +62,6 @@ $(function(){
 				"base_url":"https://stagingdemo.pestroutes.com",
 				"keys":["88492884d8154febd1057372867c2e34b371d8fb"],
 				"tokens":["6915e71f53708f17dba090febd2df4f9d79364d7"],
-			});
-			
-			//Add dev keyset
-			m.loadKeyset("michaelb",{
-				"base_url":"https://michaelb.pestroutes.com",
-				"keys":[
-					"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-					"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
-					"cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
-					"dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
-				],
-				"tokens":[
-					"1111111111111111111111111111111111111111111111111111111111111111",
-					"2222222222222222222222222222222222222222222222222222222222222222",
-					"3333333333333333333333333333333333333333333333333333333333333333",
-					"4444444444444444444444444444444444444444444444444444444444444444"
-				]
 			});
 			
 			//Restore keys from localStorage

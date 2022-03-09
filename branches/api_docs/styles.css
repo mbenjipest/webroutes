@@ -186,7 +186,7 @@
 	}
 	.example_nav{
 		display:inline-block;
-		min-width: 10em;max-width: 20em;
+		min-width: 20em;max-width: 20em;
 		margin: 1em auto;
 		background-color: #111;
 		text-align:left;
@@ -204,7 +204,6 @@
 	}
 	.example_section{
 		position:relative;
-		max-width:60em;
 		max-height:6.5em;
 		margin:.5em auto;
 		word-wrap: break-word;
@@ -249,9 +248,14 @@
 	}
 /*</hunk>*/
 
+/*<hunk name="Tools">*/
+.tool_section{
+	margin:1em;
+}
 
-
-
+p{
+	margin:.25em;
+}
 body{
 	tab-size:4;
 }
