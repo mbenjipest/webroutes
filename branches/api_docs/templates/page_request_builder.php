@@ -79,16 +79,9 @@
 	
 	//keyset driver
 	var keyset_ui = apiModule.getKeysetUI().prependTo(display);
-	keyset_ui.on('click','.keyset',function(e){
-		apiModule.setKeyset($(this).text());
-		e.preventDefault();
-	});
-
 	//deconstructor
 	display.on('remove',function (){
 		display.off();
-		keyset_ui.off();
-		keyset_ui.detach();
 		delete keyset_ui;
 		delete display;
 		Template.data_delete([[Template_id]]);

@@ -56,6 +56,10 @@ $(function(){
 					<div class='keysets'></div>\
 				</div>\
 			</div>");
+			keysetUI.on('click','.keyset',function(e){
+				apiModule.setKeyset($(this).text());
+				e.preventDefault();
+			});
 			
 			//Add demo keyset
 			m.loadKeyset('demo',{

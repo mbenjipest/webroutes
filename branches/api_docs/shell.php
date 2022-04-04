@@ -46,6 +46,7 @@
 			$( function(){
 				var display = $('#page_container');
 				window.navigation = new_navigation( display );
+
 				//Bind the navigation_anchor <a> class to the navigation module
 				$('body').on('click','.navigation_anchor', function( event ){
 					//Letting control-click, and shift-click events through naturally
@@ -80,6 +81,27 @@
 						'<?=isset($start_uri)?$start_uri:'index';?>'
 					);
 				});
+				
+				//highlight JS object function
+				function highlight_js(data){
+					var json = JSON.stringify(data, null, 4);
+					json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+					return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function(match){
+						var cls = 'number';
+						if (/^"/.test(match)) {
+							if (/:$/.test(match)) {
+								cls = 'key';
+							} else {
+								cls = 'string';
+							}
+						} else if (/true|false/.test(match)) {
+							cls = 'boolean';
+						} else if (/null/.test(match)) {
+							cls = 'null';
+						}
+						return '<span class="' + cls + '">' + match + '</span>';
+					});
+				}
 			});
 		</script>
 	</head>

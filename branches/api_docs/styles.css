@@ -17,7 +17,14 @@
 	filter: grayscale(100%);
 }
 
-
+/*<hunk name="code_highlight">*/
+.string { color: green; }
+.number { color: #D90; }
+.boolean { color: blue; }
+.null { color: magenta; }
+.key { color: #CC0000; }
+.error{ color: #F00; font-weight:bold;}
+/*</hunk>*/
 
 /*<hunk name="Home">*/
 .home{

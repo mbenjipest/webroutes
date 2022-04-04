@@ -18,6 +18,7 @@ API documentation on individual endpoints can be found <a class='navigation_anch
 		<a href='#example_customer_create' class='example_nav_item'>Create/Update customers</a>
 		<a href='#example_subscription_create' class='example_nav_item'>Create/Update subscriptions and leads</a>
 		<a href='#example_payment_profile_create' class='example_nav_item'>Create/Update a Payment Profile</a>
+		<a href='#example_document_upload' class='example_nav_item'>Upload Documents and Contracts</a>
 		<a href='#example_old_examples' class='example_nav_item'>Older Examples</a>
 	</nav>
 	
@@ -29,6 +30,8 @@ API documentation on individual endpoints can be found <a class='navigation_anch
 	
 	[[~example_section, {'example':'payment_profile_create','title':'Create/Update a Payment Profile'} ]]
 	
+	[[~example_section, {'example':'document_upload','title':'Upload documents and contracts with base64'} ]]
+	
 	[[~example_section, {'example':'old_examples','title':'Older Examples'} ]]
 </section><script id="[[Template_id]]_driver">
 (function () {
@@ -38,7 +41,7 @@ API documentation on individual endpoints can be found <a class='navigation_anch
 
 	//code block RUN driver
 	display.on('click', '.run', function(e){
-		var codeSample = $(this).next('code').html();
+		var codeSample = $(this).nextAll('code').html();
 		codeSample = codeSample.replace(/&lt;/g, "<");
 		codeSample = codeSample.replace(/&gt;/g, ">");
 		codeSample = codeSample.replace(/&amp;/g, "&");
@@ -71,16 +74,10 @@ API documentation on individual endpoints can be found <a class='navigation_anch
 	
 	//keyset driver
 	var keyset_ui = apiModule.getKeysetUI().prependTo(display);
-	keyset_ui.on('click','.keyset',function(e){
-		apiModule.setKeyset($(this).text());
-		e.preventDefault();
-	});
 
 	//deconstructor
 	display.on('remove',function (){
 		display.off();
-		keyset_ui.off();
-		keyset_ui.detach();
 		delete keyset_ui;
 		delete display;
 		Template.data_delete([[Template_id]]);
