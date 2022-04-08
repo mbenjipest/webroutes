@@ -445,6 +445,7 @@ EOT;
 		return $output;
 	}
 	//Here we define the variable assignment grammar of the css engine
+	//TODO: Variables can only be re-assigned one time?
 	private function compile_css($input_string){
 		//Find assignments|      ~Some-var     =  anything~
 		//                ~Some-__nested_var__ =  anything~

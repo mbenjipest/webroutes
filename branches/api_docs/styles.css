@@ -1,11 +1,31 @@
-/*~bg0       =#000000~*/
-/*~bg1       =#101010~*/
-/*~bg2       =#202020~*/
-/*~bg3       =#12120E~*/
-/*~bg4       =#252525~*/
-/*~bg5       =#353535~*/
+.color_change_dark{display:none;}
+.color_change_light{display:block;}
+.color_change_dark, .color_change_light{
+	position:absolute; top:0; right:0; bottom:0;
+	vertical-align:center;
+	font-size:2em;
+	filter: grayscale(100%);
+	cursor:pointer;
+}
+@media print{
+	body{
+		overflow: visible;
+		
+	}
+	#page_container{
+		position:relative;
+	}
+	.menu{
+		display:none;
+	}
+	*{
+		background: none !important;
+		color: #000 !important;
+	}
+}
 
-/*~menu-fg1  =#999~*/
+
+
 .menu_item{
 	border-right: 1px dotted __menu-fg1__;
 }
@@ -15,6 +35,8 @@
 .menu_icon>span{
 	font-size:2em;
 	filter: grayscale(100%);
+	color: __accent_color__;
+	/*text-shadow: 1px 1px 0px __accent_color__;*/
 }
 
 /*<hunk name="code_highlight">*/
@@ -32,12 +54,12 @@
 	margin:1em auto;
 	
 	padding:1em;
-	border: 1px solid #333;
+	border: 1px solid __bg5__;
 	
-	background-color: #050505;
+	background-color: rgba(__bg0_rgb__,.7);
 	background-size: .25em .25em;
 	background-position: center;
-	background-image: radial-gradient(circle, #333 0px, rgba(0, 0, 0, 0) 1px);
+	background-image: radial-gradient(circle, __bg5__ 0px, rgba(0, 0, 0, 0) 1px);
 }
 .home_icons{
 	display:inline-block;vertical-align: baseline;
@@ -52,24 +74,26 @@
 /*<hunk name="Documentation">*/
 	.documentation_nav{
 		display:inline-block; vertical-align: top;
-		background-color: #111;
+		background-color: rgba(__bg0_rgb__,.7);
 		text-align:left;
+		border: 1px solid rgba(__fg0_rgb__,.2);
 	}
 	.documentation_nav_header{
 		padding: 0.5em;
 		margin: 0;
-		border-bottom: 1px solid #666;
+		border-bottom: 1px solid __bg5__;
 	}
 	
 	.path_nav_header{
 		display:block;
 		padding:.25em;
 		margin: .25em 0;
-		border-bottom: 1px dotted #444;
+		border-bottom: 1px dotted __bg5__;
 	}
 	.documentation_content{
 		display:inline-block; vertical-align: top;
 		text-align:left;
+		border: 1px solid rgba(__fg0_rgb__,.2);
 	}
 	
 	.documentation{
@@ -83,18 +107,23 @@
 		margin:0 auto;
 		word-wrap: break-word;
 		overflow:hidden;
+		background-color: rgba(__bg0_rgb__,.7);
 		
 		transition: max-height __transition__;
 		transform: translate3d(0, 0, 0);
 	}
 	.api_path.open{
 		max-height:1000em;
-		background: none;
 	}
 	.api_path>.api_path_overlay{
 		position:absolute; top:0; right:0; bottom:0; left: 0;
 		z-index:2;
-		background: linear-gradient(to bottom,  rgb(0 0 0 / 0%) 0%,rgb(0 0 0 / 30%) 50%,rgb(30 36 30 / 70%) 100%);
+		background: linear-gradient(to bottom,
+			rgb(0 0 0 / 0%) 0%,
+			rgb(0 0 0 / 30%) 30%,
+			rgba(0,0,0,.5) 60%,
+			rgba(__secondary_color_rgb__,.6) 100%
+		);
 	}
 	.api_path.open>.api_path_overlay{
 		display:none;
@@ -114,13 +143,24 @@
 			max-width: 1000em;
 		}
 	}
+	@media print{
+		.documentation_nav{
+			display:none;
+		}
+		.api_path, .documentation_nav{
+			display:none;
+		}
+		.api_path.open{
+			display:block;
+		}
+	}
 	
 	.api_parameters{
 		padding:1em;
 		border: 1px solid __bg1__;
 		background-size: .25em .25em;
 		background-position: center;
-		background-image: radial-gradient(circle, #333 0px, rgba(0, 0, 0, 0) 1px);
+		background-image: radial-gradient(circle, __bg5__ 0px, rgba(0, 0, 0, 0) 1px);
 	}
 	.api_path_header{
 		margin: .5em auto 0 auto;
@@ -150,11 +190,12 @@
 	.api_response{
 		padding:1em;
 		border: 1px solid __bg1__;
+		background-color: rgba(__bg0_rgb__,.7);
 		background-size: 1em 1em;
 		background-position: center;
 		background-image:
-			linear-gradient(to right, #222 1px, transparent 1px),
-			linear-gradient(to bottom, #222 1px, transparent 1px);
+			linear-gradient(to right, __bg2__ 1px, transparent 1px),
+			linear-gradient(to bottom, __bg2__ 1px, transparent 1px);
 	}
 	.api_response_header{
 		margin: .5em auto;
@@ -176,7 +217,7 @@
 
 /*<hunk name="Examples">*/
 	.keysetUI{
-		border: 1px dashed #333;
+		border: 1px dashed __bg5__;
 		padding: 0.5em;
 	}
 	.page_examples{
@@ -184,30 +225,30 @@
 		margin:1em auto;
 		
 		padding:1em;
-		border: 1px solid #333;
+		border: 1px solid __bg5__;
 		
-		background-color: #050505;
+		background-color: rgba(__bg0_rgb__,.7);
 		background-size: .25em .25em;
 		background-position: center;
-		background-image: radial-gradient(circle, #333 0px, rgba(0, 0, 0, 0) 1px);
+		background-image: radial-gradient(circle, __bg5__ 0px, rgba(0, 0, 0, 0) 1px);
 	}
 	.example_nav{
 		display:inline-block;
 		min-width: 20em;max-width: 20em;
 		margin: 1em auto;
-		background-color: #111;
+		background-color: __bg1__;
 		text-align:left;
 	}
 	.example_nav_header{
 		padding: 0.5em;
 		margin: 0;
-		border-bottom: 1px solid #666;
+		border-bottom: 1px solid __bg5__;
 	}
 	.example_nav_item{
 		display:block;
 		padding:.25em;
 		margin: .25em 0;
-		border-bottom: 1px dotted #444;
+		border-bottom: 1px dotted __bg5__;
 	}
 	.example_section{
 		position:relative;
@@ -221,12 +262,12 @@
 		
 		padding:1em;
 		border: 1px solid __bg1__;
-		background-color: __bg0__;
+		background-color: rgba(__bg0_rgb__,.7);
 		background-size: 1em 1em;
 		background-position: center;
 		background-image:
-			linear-gradient(to right, #222 1px, transparent 1px),
-			linear-gradient(to bottom, #222 1px, transparent 1px);
+			linear-gradient(to right, __bg2__ 1px, transparent 1px),
+			linear-gradient(to bottom, __bg2__ 1px, transparent 1px);
 	}
 	.example_section.open{
 		max-height:1000em;
@@ -234,7 +275,12 @@
 	.example_section>.example_overlay{
 		position:absolute; top:0; right:0; bottom:0; left: 0;
 		z-index:2;
-		background: linear-gradient(to bottom,  rgb(0 0 0 / 0%) 0%,rgb(0 0 0 / 30%) 50%,rgb(30 36 30 / 70%) 100%);
+		background: linear-gradient(to bottom,
+			rgb(0 0 0 / 0%) 0%,
+			rgb(0 0 0 / 30%) 30%,
+			rgba(0,0,0,.5) 60%,
+			rgba(__secondary_color_rgb__,.6) 100%
+		);
 	}
 	.example_section.open>.example_overlay{
 		display:none;
@@ -244,22 +290,22 @@
 		padding: .5em .5em .5em 0em;
 	}
 	.example_code{
-		background-color: #000;
+		background-color: __bg0__;
 		padding:.5em;
 		margin-bottom:3em;
 	}
 	.run{
 		margin: 0 1em;
-		color: #EFE;
-		background: #000;
+		color: __fg1__;
+		background: __bg0__;
 	}
 /*</hunk>*/
 
 /*<hunk name="Tools">*/
-.tool_section{
-	margin:1em;
-}
-
+	.tool_section{
+		margin:1em;
+	}
+/*</hunk>*/
 p{
 	margin:.25em;
 }
@@ -269,7 +315,7 @@ body{
 code{
 	display:block;
 	margin-left:1em;
-	border:1px dashed #CCC;
+	border:1px dashed __fg1__;
 	padding: .25em;
 	transition: max-height 1s;
 	white-space:pre-wrap;

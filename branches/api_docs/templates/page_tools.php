@@ -2,7 +2,7 @@
 	<div class='downloads'></div>
 	
 	<div class='tool_section'>
-		<a class='navigation_anchor' page='request_builder' data='' href='/request_builder'><u>Request Builder</u></a>
+		<a class='navigation_anchor' page='request_builder' data='' href='/request_builder'>Request Builder</a>
 		<p>Useful tool for prototyping request filters</p>
 	</div>
 	
@@ -22,9 +22,6 @@
 	//deconstructor
 	display.on('remove',function (){
 		display.off();
-		keyset_ui.off();
-		keyset_ui.detach();
-		delete keyset_ui;
 		delete display;
 		Template.data_delete([[Template_id]]);
 	});

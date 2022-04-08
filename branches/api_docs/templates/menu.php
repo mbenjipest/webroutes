@@ -20,6 +20,8 @@
 		FAQ
 	</a>
 	<a class='menu_item debug'>debug</a>
+	<div class='color_change_dark'>🌙</div>
+	<div class='color_change_light'>☀️</div>
 </div><script id="[[Template_id]]_driver">
 var menu = (function () {
 	var driver= $('#[[Template_id]]_driver');
@@ -33,6 +35,14 @@ var menu = (function () {
 	//debug panel isn't attached to a page anchor
 	display.on('click', '.debug',function(){
 		$('.debug_panel').toggle();
+	});
+
+	display.on('click', '.color_change_dark',function(){
+		Template.hot_branch('dark');
+	});
+
+	display.on('click', '.color_change_light',function(){
+		Template.hot_branch('light');
 	});
 
 

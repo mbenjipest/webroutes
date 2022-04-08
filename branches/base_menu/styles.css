@@ -1,44 +1,33 @@
 /*<hunk name="Theme">*/
+	/*~primary_color=#1A1353~*/
+	/*~primary_color_rgb=26,19,83~*/
+	/*~secondary_color=#00aecf~*/
+	/*~secondary_color_rgb=0,174,207~*/
+	/*~accent_color=#66c4ab~*/
+	/*~accent_color_rgb=102,196,171~*/
 	/*~title-fg  =#FFFFFF~*/
 	/*~title-bg  =#333366~*/
 	
 	/*~fg0       =#FFFFFF~*//*main text*/
+	/*~fg0_rgb   =255,255,255~*//*main text*/
 	/*~fg1       =#DDDDDD~*//*item text*/
 	/*~fg2       =#AAAAAA~*//*item sub-text*/
 	/*~fg3       =#242440~*//*input border*/
 	/*~fg4       =#EEEEEE~*//*button text*/
-
-	/*~bg0       =#000000~*//*Background, input background*/
-	/*~bg1       =#080808~*//*List items*/
-	/*~bg2       =#101010~*//*Form Label*/
-	/*~bg3       =#12120E~*//*Detail background*/
-	/*~bg4       =#12120E~*//*Login background*/
-	/*~bg5       =#222222~*//*Feedback background*/
-
-
-	/*~fg_affirm =#88FF88~*/
-	/*~fg_cancel =#FF8888~*/
-
-	/*~bg_affirm =#005500~*/
-	/*~bg_cancel =#550000~*/
-	/*~bg_modify =#000055~*/
-
-	/*~fg-color1 =#347CDC~*//*blue*/
-	/*~fg-color2 =#3688BA~*//*dark blue*/
-	/*~fg-color3 =#155BC9~*//*button blue*/
-	/*~fg-color4 =#3FBD7D~*//*green*/
-	/*~fg-color5 =#149A14~*//*light_green*/
-	/*~fg-color6 =#23A739~*//*button green*/
-	/*~fg-color7 =#FC3E39~*//*red*/
-
-	/*~menu-fg1  =#145CA9~*//*blue menu*/
-	/*~menu-fg2  =#929292~*//*menu label unselected*/
+	
+	/*~bg0       =#000000~*//*Root background color*/
+	/*~bg0_rgb   =0,0,0~*/
+	/*~bg1       =#101010~*//*Doc filters odd, borders*/
+	/*~bg2       =#202020~*//*Doc filters even*/
+	/*~bg3       =#12120E~*/
+	/*~bg4       =#252525~*//*Doc params odd*/
+	/*~bg5       =#353535~*//*Doc params even*/
+	
+	/*~menu-fg1  =#999999~*/
+	/*~menu-fg2  =#929292~*/
 	/*~menu-bg   =#000000~*/
-
-	/*~calendar0 =#A3A7AF~*//*grid*/
-	/*~calendar1 =#89909A~*//*other   month date*/
-	/*~calendar2 =#3F4E5E~*//*current month date*/
-	/*~calendar3 =#29AAFA~*//*selected date*/
+	
+	/*~red_button=#FC3E39~*/
 	/*~overlay   =rgba(0,0,0,0.3)~*/
 	/*~error     =#FF0000~*/
 	/*~transition-time = 400ms~*/
@@ -50,7 +39,7 @@
 		box-shadow: 
 			1px  0 0 0 #000,
 			-1px 0 0 0 #000;
-		background-color: __bg0__;
+		background: linear-gradient(to bottom right,  rgb(__primary_color_rgb__,.9) 0%, rgb(__secondary_color_rgb__,.9) 100%);
 		height:100%; overflow:auto;
 	}
 /*</hunk>*/
@@ -61,7 +50,7 @@
 		font-family: "Arial";
 		margin:0; padding:0;
 		color:__fg0__;
-		background-color:__bg0__;
+		background-color: __bg0__;
 		overflow: hidden;
 	}
 	a{
@@ -74,8 +63,9 @@
 		overflow-x:hidden;
 		overflow-y:auto;
 	}
-	.page,.page_stale{
-
+	h1,h2,h3,h4{
+		color: __secondary_color__;
+		text-shadow: 0px 1px 0px rgba(0,0,0,.5);
 	}
 /*</hunk>*/
 
@@ -140,7 +130,7 @@
 		height:2.5em; line-height:2.5em;
 		width:2.5em;
 		margin: 0 auto;
-		border: 1px solid __fg-color1__;
+		border: 1px solid __accent_color__;
 		border-radius:1em;
 
 		font-weight: bold;
@@ -192,49 +182,5 @@
 		outline:none;
 		color:__fg0__;
 		background:__bg0__;
-	}
-/*</hunk>*/
-
-/*<hunk name="Login_page">*/
-	.login_page{
-		background: __bg4__;
-		min-height:100%;
-	}
-	.login_title{
-		display: flex;
-		flex-flow: column nowrap;
-		justify-content: space-around;
-		text-align:center;
-		height: 2.5em;
-		padding-top: 1.25em;
-		background-color: __title-bg__;
-		color: __title-fg__;
-	}
-	.login_buttons{
-		display:flex;flex-flow: row nowrap;
-		justify-content: space-around;
-		margin-top: 2em;
-	}
-	.login_button, .logout_button{
-		font-size:1em;
-		width:40%;
-		height:2em;
-		box-sizing: border-box;
-		padding:.25em;
-		border:0;
-		border-radius:.25em;
-		text-align: center;
-		font-weight: bold;
-		color: __fg4__;
-	}
-	.logout_button{
-		background-color:__fg-color7__;
-	}
-	.login_button{
-		background-color:__fg-color6__;
-	}
-	.login_status{
-		text-align: center;
-		padding: .25em;
 	}
 /*</hunk>*/

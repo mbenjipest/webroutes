@@ -1,42 +1,49 @@
+.color_change_light{display:none;}
+.color_change_dark{display:block;}
 /*<hunk name="Theme">*/
-/*this is really just a hard copy as the default theme is dark*/
-    /*~title-fg  =#FFFFFF~*/
-    /*~title-bg  =#333366~*/
-    
-    /*~fg0       =#FFFFFF~*//*main text*/
-    /*~fg1       =#DDDDDD~*//*item text*/
-    /*~fg2       =#AAAAAA~*//*item sub-text*/
-    /*~fg3       =#242440~*//*input border*/
-    /*~fg4       =#EEEEEE~*//*button text*/
-
-    /*~bg0       =#000000~*//*Background, input background*/
-    /*~bg1       =#101010~*//*List items*/
-    /*~bg2       =#202020~*//*Form Label*/
-    /*~bg3       =#12120E~*//*Detail background*/
-    /*~bg4       =#12120E~*//*Login background*/
-    /*~bg5       =#222222~*//*Feedback background*/
-
-    /*~fg-color1 =#347CDC~*//*blue*/
-    /*~fg-color2 =#3688BA~*//*dark blue*/
-    /*~fg-color3 =#155BC9~*//*button blue*/
-    /*~fg-color4 =#3FBD7D~*//*green*/
-    /*~fg-color5 =#149A14~*//*light_green*/
-    /*~fg-color6 =#23A739~*//*button green*/
-    /*~fg-color7 =#FC3E39~*//*red*/
-
-    /*~menu-fg1  =#145CA9~*//*blue menu*/
-    /*~menu-fg2  =#929292~*//*menu label unselected*/
-    /*~menu-bg   =#000000~*/
-
-    /*~calendar0 =#A3A7AF~*//*grid*/
-    /*~calendar1 =#89909A~*//*other   month date*/
-    /*~calendar2 =#3F4E5E~*//*current month date*/
-    /*~calendar3 =#29AAFA~*//*selected date*/
-    /*~overlay   =rgba(0,0,0,0.3)~*/
-    /*~error     =#FF0000~*/
-    /*~transition-time = 400ms~*/
-    /*~transition=__transition-time__ cubic-bezier(0.4, 0.0, 0.2, 1)~*/
+	/*~primary_color=#00aecf~*/
+	/*~primary_color_rgb=0,174,207~*/
+	/*~secondary_color=#1A1353~*/
+	/*~secondary_color_rgb=26,19,83~*/
+	/*~accent_color=#66c4ab~*/
+	/*~accent_color_rgb=102,196,171~*/
+	/*~title-fg  =#000000~*/
+	/*~title-bg  =#DDDDAA~*/
+	
+	/*~fg0       =#000000~*//*main text*/
+	/*~fg0_rgb   =0,0,0~*//*main text*/
+	/*~fg1       =#222222~*//*item text*/
+	/*~fg2       =#AAAAAA~*//*item sub-text*/
+	/*~fg3       =#DBDBBF~*//*input border*/
+	/*~fg4       =#EEEEEE~*//*button text*/
+	
+	/*~bg0       =#FFFFFF~*//*Root background color*/
+	/*~bg0_rgb   =255,255,255~*/
+	/*~bg1       =#EFEFEF~*//*Doc filters odd, borders*/
+	/*~bg2       =#DFDFDF~*//*Doc filters even*/
+	/*~bg3       =#DDDDDD~*/
+	/*~bg4       =#DDDDDD~*//*Doc params odd*/
+	/*~bg5       =#EEEEEE~*//*Doc params even*/
+	
+	/*~menu-fg1  =#999999~*/
+	/*~menu-fg2  =#1A1353~*/
+	/*~menu-bg   =#FFFFFF~*/
+	
+	/*~red_button=#FC3E39~*/
+	/*~overlay   =rgba(0,0,0,0.3)~*/
+	/*~error     =#FF0000~*/
+	/*~transition-time = 400ms~*/
+	/*~transition=__transition-time__ cubic-bezier(0.4, 0.0, 0.2, 1)~*/
 /*</hunk>*/
 button{
-    text-shadow: 0px 1px 0px #000;
+	text-shadow: 0px 1px 0px #000;
 }
+/*
+--primary: #1A1353;
+--primaryAlt: #1A1353;
+--secondary: #00aecf;
+--secondaryAlt: #00aecf;
+--accent: #66c4ab;
+--accentAlt: #38b790;
+--link: #1A1353;
+*/
