@@ -33,6 +33,7 @@
 			})).appendTo(display.find('.documentation_content'));
 		}
 	};
-
+	
+	console.log('Hint: Print this page for a handy reference sheet of endpoints that were discussed. :)');
 })(Template);
 </script>

@@ -1,0 +1,9 @@
+/*<hunk name="hide tools">*/
+ /*we're replacing something that hides the tools tab with nothing (hunk is deleted)*/
+/*</hunk>*/
+
+/*<hunk name="Tools">*/
+	.tool_section{
+		margin:1em;
+	}
+/*</hunk>*/

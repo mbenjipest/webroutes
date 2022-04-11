@@ -4,7 +4,7 @@
 
 $instance = new Temp();
 Class Temp{ // Compiled Templates | CSS Variables | Live Patching | Live Branching | A/B Testing
-	private $url = 'https://mbenji.dev/';
+	private $url = 'https://fieldroutes.dev/';
 	//private $url = 'https://localhost/';
 	private $source_dir = '';
 	private $branch = 'HEAD';

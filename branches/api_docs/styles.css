@@ -1,43 +1,8 @@
-.color_change_dark{display:none;}
-.color_change_light{display:block;}
-.color_change_dark, .color_change_light{
-	position:absolute; top:0; right:0; bottom:0;
-	vertical-align:center;
-	font-size:2em;
-	filter: grayscale(100%);
-	cursor:pointer;
+/*<hunk name="hide tools">*/
+.menu_item[page="tools"]{
+	display:none;
 }
-@media print{
-	body{
-		overflow: visible;
-		
-	}
-	#page_container{
-		position:relative;
-	}
-	.menu{
-		display:none;
-	}
-	*{
-		background: none !important;
-		color: #000 !important;
-	}
-}
-
-
-
-.menu_item{
-	border-right: 1px dotted __menu-fg1__;
-}
-.menu_icon{
-	border:0;
-}
-.menu_icon>span{
-	font-size:2em;
-	filter: grayscale(100%);
-	color: __accent_color__;
-	/*text-shadow: 1px 1px 0px __accent_color__;*/
-}
+/*</hunk>*/
 
 /*<hunk name="code_highlight">*/
 .string { color: green; }
@@ -299,27 +264,21 @@
 		color: __fg1__;
 		background: __bg0__;
 	}
-/*</hunk>*/
-
-/*<hunk name="Tools">*/
-	.tool_section{
-		margin:1em;
+	body{
+		tab-size:4;
+	}
+	code{
+		display:block;
+		margin-left:1em;
+		border:1px dashed __fg1__;
+		padding: .25em;
+		transition: max-height 1s;
+		white-space:pre-wrap;
 	}
 /*</hunk>*/
-p{
-	margin:.25em;
-}
-body{
-	tab-size:4;
-}
-code{
-	display:block;
-	margin-left:1em;
-	border:1px dashed __fg1__;
-	padding: .25em;
-	transition: max-height 1s;
-	white-space:pre-wrap;
-}
+
+
+
 .closed{ max-height:1em; overflow: hidden; }
 .closed:before{ display:block; height:1em; line-height:1em; content: 'Click to show example'; }
 #currentKeyset{margin:1em;color:#F22;}

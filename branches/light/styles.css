@@ -35,9 +35,6 @@
 	/*~transition-time = 400ms~*/
 	/*~transition=__transition-time__ cubic-bezier(0.4, 0.0, 0.2, 1)~*/
 /*</hunk>*/
-button{
-	text-shadow: 0px 1px 0px #000;
-}
 /*
 --primary: #1A1353;
 --primaryAlt: #1A1353;
