@@ -1,21 +1,20 @@
 <div class='menu'>
 	<a class='navigation_anchor menu_item' href='/login'      page='login'     >
-		<div class='menu_icon'></div>
+		<div class='menu_icon'>#</div>
 		Login
 	</a>
-	<a class='navigation_anchor menu_item' href='/time_clock' page='time_clock'>
-		<div class='menu_icon'></div>
-		Time Clock
+	<a class='navigation_anchor menu_item' href='/readme' page='readme'>
+		<div class='menu_icon'>?</div>
+		Readme
 	</a>
-	<a class='navigation_anchor menu_item' href='/routes'     page='routes'    >
-		<div class='menu_icon'></div>
-		Routes
+	<a class='menu_item debug'>
+		<div class='menu_icon'>&lt;&gt;</div>
+		debug
 	</a>
-	<a class='navigation_anchor menu_item' href='/feedback'   page='feedback'  >
-		<div class='menu_icon'></div>
-		Feedback
+	<a class='menu_item' href='/branch'>
+		<div class='menu_icon'>\|/</div>
+		branches
 	</a>
-	<a class='menu_item debug'>debug</a>
 </div><script id="[[Template_id]]_driver">
 var menu = (function () {
 	var driver= $('#[[Template_id]]_driver');

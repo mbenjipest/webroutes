@@ -1,17 +1,16 @@
-<section class='home'>
+<section class='home page_section'>
 	<section class='pre_line'>
 		Welcome to the FieldRoutes API documentation!
 		
 		Resources:
 		<a class='navigation_anchor' page='documentation' data='' href='/documentation'>
 		<span class='home_icons'>📗</span>Documentation on individual endpoints</a>
-		<a class='navigation_anchor' page='tools' data='' href='/tools'>
-		<span class='home_icons'>🔨</span>Tools</a>
 		<a class='navigation_anchor' page='examples' data='' href='/examples'>
 		<span class='home_icons'>👨‍🏫</span>Examples and workflows</a>
 		<a class='navigation_anchor' page='faq' data='' href='/faq'>
 		<span class='home_icons'>❔</span>Frequeuntly asked questions</a>
-		
+		<a class='navigation_anchor' page='tools' data='' href='/tools'>
+		<span class='home_icons'>🔨</span>Tools</a>
 		
 		Things to know:
 		

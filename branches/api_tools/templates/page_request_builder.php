@@ -1,4 +1,4 @@
-<section class='page_request_builder'>
+<section class='page_request_builder page_section'>
 	<div class='downloads'></div>
 	
 	<h4>path</h4>
@@ -7,7 +7,10 @@
 		<option value='/customer/search'>/customer/search</option>
 	</select>
 	
-	<h4>Filters</h4>
+	<h4>Current Filters:</h4>
+	<div class='request_builder_staged_filters'>
+		<div class=''></div>
+	</div>
 	<div class='path_filters'>property, operator, value</div>
 	
 	<h4>Add Filter</h4>

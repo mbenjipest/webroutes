@@ -106,7 +106,6 @@
 		</script>
 	</head>
 	<body>
-		<div id="time_container"></div>
 		<div id="page_container">
 			<div class="page">
 				Loading...<!-- DEFAULT DOCUMENT -->

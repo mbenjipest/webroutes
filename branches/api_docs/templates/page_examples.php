@@ -1,4 +1,4 @@
-<section class='page_examples'>
+<section class='page_examples page_section'>
 	<div class='downloads'></div>
 	
 			

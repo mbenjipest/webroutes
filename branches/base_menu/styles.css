@@ -33,14 +33,39 @@
 	/*~transition-time = 400ms~*/
 	/*~transition=__transition-time__ cubic-bezier(0.4, 0.0, 0.2, 1)~*/
 /*</hunk>*/
+/* from fieldroutes.com
+--primary: #1A1353;
+--primaryAlt: #1A1353;
+--secondary: #00aecf;
+--secondaryAlt: #00aecf;
+--accent: #66c4ab;
+--accentAlt: #38b790;
+--link: #1A1353;
+*/
 
-/*<hunk name="Navigation_augments">*/
+/*<hunk name="Common_page_styles">*/
 	.page, .page_stale{
 		box-shadow: 
 			1px  0 0 0 #000,
 			-1px 0 0 0 #000;
-		background: linear-gradient(to bottom right,  rgb(__primary_color_rgb__,.9) 0%, rgb(__secondary_color_rgb__,.9) 100%);
+		background:
+			linear-gradient(to bottom right,  rgb(__primary_color_rgb__,.9) 0%, rgb(__secondary_color_rgb__,.9) 100%),
+			url(/resources/leaf-white.svg) left bottom / auto 100% no-repeat;
+		background-blend-mode: difference;
 		height:100%; overflow:auto;
+		
+	}
+	.page_section{
+		max-width: 70em;
+		margin:1em auto;
+		
+		padding:1em;
+		border: 1px solid __bg5__;
+		
+		background-color: rgba(__bg0_rgb__,.7);
+		background-size: .25em .25em;
+		background-position: center;
+		background-image: radial-gradient(circle, __bg5__ 0px, rgba(0, 0, 0, 0) 1px);
 	}
 /*</hunk>*/
 
@@ -113,19 +138,6 @@
 	}
 /*</hunk>*/
 
-/*<hunk name="global_timer">*/
-#time_container{
-	position:absolute;
-	top:0; left:0; right:0;
-	vertical-align: middle;
-	font-size: .75em;
-	height:1em;
-	padding: .25em;
-	z-index: 9001;
-	text-align:center;
-}
-/*</hunk>*/
-
 /*<hunk name="Menu">*/
 	/*~menu-height=3em~*/
 	.menu{
@@ -173,6 +185,7 @@
 /*</hunk>*/
 
 /*<hunk name="input">*/
+	/*These items aren't in use except on the hidden login panel*/
 	.input_block{
 		display:flex; flex-flow: row nowrap;
 		justify-content: space-between;
@@ -216,5 +229,49 @@
 		outline:none;
 		color:__fg0__;
 		background:__bg0__;
+	}
+/*</hunk>*/
+
+/*<hunk name="Login_page">*/
+	.login_page{
+		background: __bg4__;
+		min-height:100%;
+	}
+	.login_title{
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: space-around;
+		text-align:center;
+		height: 2.5em;
+		padding-top: 1.25em;
+		background-color: __title-bg__;
+		color: __title-fg__;
+	}
+	.login_buttons{
+		display:flex;flex-flow: row nowrap;
+		justify-content: space-around;
+		margin-top: 2em;
+	}
+	.login_button, .logout_button{
+		font-size:1em;
+		width:40%;
+		height:2em;
+		box-sizing: border-box;
+		padding:.25em;
+		border:0;
+		border-radius:.25em;
+		text-align: center;
+		font-weight: bold;
+		color: __fg4__;
+	}
+	.logout_button{
+		background-color:__red_button__;
+	}
+	.login_button{
+		background-color:__primary_color__;
+	}
+	.login_status{
+		text-align: center;
+		padding: .25em;
 	}
 /*</hunk>*/
