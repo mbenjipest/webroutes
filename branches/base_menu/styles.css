@@ -233,7 +233,7 @@
 /*</hunk>*/
 
 /*<hunk name="Login_page">*/
-	.login_page{
+	.login_page, .change_password_page{
 		background: __bg4__;
 		min-height:100%;
 	}
@@ -252,7 +252,7 @@
 		justify-content: space-around;
 		margin-top: 2em;
 	}
-	.login_button, .logout_button{
+	.login_button, .logout_button, .change_password_button{
 		font-size:1em;
 		width:40%;
 		height:2em;
@@ -267,7 +267,7 @@
 	.logout_button{
 		background-color:__red_button__;
 	}
-	.login_button{
+	.login_button, .change_password_button{
 		background-color:__primary_color__;
 	}
 	.login_status{

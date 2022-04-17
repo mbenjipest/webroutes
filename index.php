@@ -16,8 +16,8 @@ Class Temp{ // Compiled Templates | CSS Variables | Live Patching | Live Branchi
 	
 	//globally available template variables e.g. [[!Logo]]
 	private $globals = [
-		"Company_name"  => "mbenji.com",
-		"Logo"          => '(o.O)_\nn/'
+		"Company_name"  => "FieldRoutes",
+		"Logo"          => 'FieldRoutes'
 	];
 	
 	private $debug = false;
