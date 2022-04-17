@@ -63,7 +63,7 @@ $(function(){
 			
 			//Add demo keyset
 			m.loadKeyset('demo',{
-				"base_url":"https://stagingdemo.pestroutes.com",
+				"base_url":"https://stagingdemo.pestroutes.com/api/",
 				"keys":["88492884d8154febd1057372867c2e34b371d8fb"],
 				"tokens":["6915e71f53708f17dba090febd2df4f9d79364d7"],
 			});
@@ -96,6 +96,9 @@ $(function(){
 				params = params || {};
 				params["authenticationKey"]= keys[m.currentIndex];
 				params["authenticationToken"]=tokens[m.currentIndex];
+				if(typeof window.login_token!=='undefined'){
+					params['login_token']=window.login_token;
+				}
 				if(normalModel){
 					params["normalModel"]=1;
 				}
@@ -103,7 +106,7 @@ $(function(){
 					params["queryProfileToken"]=queryProfileToken;
 				}
 				//console.log(params);
-				$.post(base_url+'/api/'+endpoint+'/'+action, params,
+				$.post(base_url+endpoint+'/'+action, params,
 				function(response){
 					if(response.success==false || response.errorMessage){
 						console.error(response.errorMessage);
@@ -123,13 +126,16 @@ $(function(){
 				params = params || {};
 				params["authenticationKey"]= keys[m.currentIndex];
 				params["authenticationToken"]=tokens[m.currentIndex];
+				if(typeof window.login_token!=='undefined'){
+					params['login_token']=window.login_token;
+				}
 				if(normalModel){
 					params["normalModel"]=1;
 				}
 				if(queryProfileToken){
 					params["queryProfileToken"]=queryProfileToken;
 				}
-				$.post(base_url+'/api/'+type+'/search',params,
+				$.post(base_url+type+'/search',params,
 				function(response){
 					if(response.success==false || response.errorMessage){
 						console.error(response.errorMessage);
@@ -187,13 +193,16 @@ $(function(){
 				params[primary_key]=ids;
 				params["authenticationKey"]= keys[m.currentIndex];
 				params["authenticationToken"]=tokens[m.currentIndex];
+				if(typeof window.login_token!=='undefined'){
+					params['login_token']=window.login_token;
+				}
 				if(normalModel){
 					params["normalModel"]=1;
 				}
 				if(queryProfileToken){
 					params["queryProfileToken"]=queryProfileToken;
 				}
-				$.post(base_url+'/api/'+type+'/get', params,
+				$.post(base_url+type+'/get', params,
 					function(response){
 					if(response.errorMessage){
 						console.error(response.errorMessage);
@@ -401,13 +410,13 @@ $(function(){
 
 				var callUrl;
 				if(typeof domain !=='undefined'){
-					callUrl='https://'+domain+'.pestroutes.com';
+					callUrl='https://'+domain+'.pestroutes.com/api/';
 				}else if(m.recompleteWith!=false){
-					callUrl='https://'+m.recompleteWith+'.pestroutes.com';
+					callUrl='https://'+m.recompleteWith+'.pestroutes.com/api/';
 				}else{
 					callUrl=base_url;
 				}
-				$.post(callUrl+'/api/'+params['endpoint']+'/'+params['action'], params,
+				$.post(callUrl+params['endpoint']+'/'+params['action'], params,
 				function(response){
 					if(typeof response['processingTime']!=='undefined'){
 						processTime = response['processingTime'].split(' ')[0];

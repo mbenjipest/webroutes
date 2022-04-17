@@ -5,7 +5,11 @@ Class Login_model{
 
 	public static function login( $request ){
 		static::validate_login( $request );
-		$query='SELECT * FROM user WHERE username=:username;';
+		$query='
+			SELECT uu.*
+			FROM user uu
+			WHERE username=:username
+		';
 		$params=array();
 		$params['username']=$request['username'];
 		$db = new Db();
@@ -93,6 +97,24 @@ Class Login_model{
 			return false;
 		}
 		
+	}
+	
+	public static function get_endpoints( $user_id ){
+		$query='
+			SELECT IF(ue.endpoint IS NULL, 0, GROUP_CONCAT(ue.endpoint)) AS endpoints
+			FROM user_endpoints ue
+			WHERE user_id=:user_id
+		';
+		$params=array();
+		$params['user_id']=$user_id;
+		$db = new Db();
+		$result = $db->query($query, $params);
+		if(empty($result)){
+			throw new Exception('User does not exist.');
+		}
+		$endpoints=$result[0]['endpoints']==0?[]:explode(',',$result[0]['endpoints']);//['*/*']
+
+		return $endpoints;
 	}
 
 	private static function rand_secure( $min, $max ) {

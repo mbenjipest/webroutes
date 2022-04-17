@@ -518,6 +518,14 @@ EOT;
 		if( !$reflection->isPublic() ){
 			die('Access Denied.');
 		}
-		call_user_func_array( array($instance, $method), array($_REQUEST) );
+		$args = func_get_args();
+		$args=array_slice($args,2);
+		array_unshift($args, $_POST);
+		try{
+			call_user_func_array( array($instance, $method), $args);
+		} catch (Exception $e){
+			die( $e->getMessage() );
+		}
+		
 	}
 }

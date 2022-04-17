@@ -63,6 +63,11 @@
 					return false;
 				});
 
+				//If we have a login token, we're logged in.
+				if(localStorage.login_token){
+					window.login_token=localStorage.login_token;
+				}
+
 				// Phone home for new code
 				Template.patch().then( function(){
 					//Add Debug interface
