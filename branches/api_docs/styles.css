@@ -207,7 +207,9 @@
 			linear-gradient(to bottom, __bg2__ 1px, transparent 1px);
 	}
 	.example_section.open{
-		max-height:1000em;
+		/*max-height:90vh;*/
+		max-height:2000em;
+		overflow:auto
 	}
 	.example_section>.example_overlay{
 		position:absolute; top:0; right:0; bottom:0; left: 0;

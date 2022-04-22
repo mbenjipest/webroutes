@@ -169,11 +169,15 @@ File Structure
 			   navigation.js
 			   jquery-3.2.1.min.js
 			index.html
-			styles.css
+			css/
+			   light.css
+			   dark.css
 			templates.js
 
 
 App Deployment
+	0) Install Cordova and platforms
+		https://cordova.apache.org/docs/en/10.x/guide/platforms/android/index.html
 	1) Download each of the files needed by cordova from the included patch overlay or the links below:
 		index.html   - /build/branch_name
 		styles.css   - /css/branch_name

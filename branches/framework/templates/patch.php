@@ -9,7 +9,7 @@
 		<a class='debug_anchor' href='branch'>Directory</a>
 		<a class='debug_anchor readme'>Readme</a>
 		<a class='debug_anchor' href="<?= $this->url.'templates/'.$this->branch; ?>" download="templates.js">Templates</a>
-		<a class='debug_anchor' href="<?= $this->url.'css/'      .$this->branch; ?>" download="styles.css"  >CSS</a>
+		<a class='debug_anchor' href="<?= $this->url.'css/'      .$this->branch; ?>" download="<?=$this->branch;?>.css"  >CSS</a>
 		<a class='debug_anchor' href="<?= $this->url.'build/'    .$this->branch; ?>" download="index.html"  >Shell</a>
 	</div>
 </div><script id="[[Template_id]]_driver">

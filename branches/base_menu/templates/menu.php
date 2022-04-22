@@ -7,13 +7,13 @@
 		<div class='menu_icon'>?</div>
 		Readme
 	</a>
-	<a class='menu_item debug'>
-		<div class='menu_icon'>&lt;&gt;</div>
-		debug
-	</a>
 	<a class='menu_item' href='/branch'>
 		<div class='menu_icon'>\|/</div>
-		branches
+		Branches
+	</a>
+	<a class='menu_item debug'>
+		<div class='menu_icon'>&lt;&gt;</div>
+		Debug
 	</a>
 </div><script id="[[Template_id]]_driver">
 var menu = (function () {

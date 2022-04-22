@@ -7,28 +7,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
 		<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
 		
-	<?php if(isset($build) && $build==true){ ?>
-		<script src="resources/jquery-3.2.1.min.js"></script>
+			<script src="resources/jquery-3.2.1.min.js"></script>
 		<!--<script src="resources/jquery-ui.min.js"></script>-->
 		<!--<link  href="resources/jquery-ui.min.css" rel="stylesheet"/>-->
 		<script src="cordova.js"></script>
 		<script src="resources/navigation.js"></script>
-		<script src="resources/swagger.js"></script>
 		<script src="resources/APIModule.js"></script>
 		<script src="templates.js"></script>
-		<link  href="css/<?=$branch;?>.css" rel="stylesheet" id="template_css"/>
-	<?php } else { ?>
-		<script src="<?= $this->url.'resources/jquery-3.2.1.min.js'; ?>"></script>
-		<!--<script src="<?= $this->url.'resources/jquery-ui.min.js'; ?>"></script>-->
-		<!--<link  href="<?= $this->url.'resources/jquery-ui.min.css'; ?>" rel="stylesheet" />-->
-
-		<script src="<?= $this->url.'resources/navigation.js';?>"></script>
-		<script src="<?= $this->url.'resources/swagger.js';?>"></script>
-		<script src="<?= $this->url.'resources/APIModule.js';?>"></script>
-		<script src="<?= $this->url.'templates/'.$branch; ?>"></script>
-		<link  href="<?= $this->url.'css/'      .$branch; ?>.css" rel="stylesheet" id="template_css"/>
-	<?php } ?>
-		<script>
+		<link  href="styles.css" rel="stylesheet"/>
+			<script>
 			// Add 'remove' event to jQuery (from jqueryUI)
 			$.cleanData = (function( original_fn ) {
 				return function( elements ) {
@@ -44,7 +31,7 @@
 		</script>
 
 		<script>
-			console.log('branch: '+'<?=$branch;?>');
+			console.log('branch: '+'HEAD');
 			$( function(){
 				var display = $('#page_container');
 				window.navigation = new_navigation( display );
@@ -83,9 +70,9 @@
 					navigation.recover()
 					|| //Or go to whatever page was specified at compile time
 					navigation.go(
-						'<?=isset($start_page)?$start_page:'index';?>',
-						<?=isset($start_data)?json_encode($start_data):'{}';?>,
-						'<?=isset($start_uri)?$start_uri:'index';?>'
+						'index',
+						[],
+						'index'
 					);
 				});
 				

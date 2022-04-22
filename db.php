@@ -8,10 +8,10 @@ Class Db{
 	private $statement;
 
 	function __construct(){
-		//$this->connection = new PDO("mysql:host=".$this->server.";port=8889;dbname=".$this->database, $this->username, $this->password);
+		//$this->connection = new PDO("mysql:host=".$this->server.";dbname=".$this->database, $this->username, $this->password);
 		try{$this->connection = new PDO("mysql:unix_socket=".$this->server.";dbname=".$this->database."", $this->username, $this->password);}
 		catch(Exception $e){
-			print_r($e);die();
+			throw $e;
 		}
 		$this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$this->connection->exec("set time_zone = '+00:00';");

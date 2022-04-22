@@ -7,7 +7,7 @@ Class Temp{ // Compiled Templates | CSS Variables | Live Patching | Live Branchi
 	private $url = 'https://fieldroutes.dev/';
 	//private $url = 'https://localhost/';
 	private $source_dir = '';
-	private $branch = 'HEAD';
+	private $branch = 'light';//HEAD
 	private $config = [
 		'start_uri'=>'index',
 		'start_page'=>'index',
@@ -91,7 +91,7 @@ Class Temp{ // Compiled Templates | CSS Variables | Live Patching | Live Branchi
 		$sorted=array();
 		
 		foreach($raw as $branch){
-			if($branch==='.' || $branch==='..') continue;
+			if(preg_match('/^\./',$branch)) continue;
 			$temp = array();
 			$temp['Branch']=$branch;
 			
@@ -213,7 +213,7 @@ EOT;
 		m.templates     = {};
 		m.compile_time  = 0;
 		$('#template_css')
-			.after(\"<link href='".$this->url."css/\"+branch+\"' rel='stylesheet' id='template_css'/>\")
+			.after(\"<link href='".$this->url."css/\"+branch+\".css' rel='stylesheet' id='template_css'/>\")
 			.remove();
 
 		return new Promise( function( resolve, reject ){
@@ -317,7 +317,7 @@ EOT;
 	}
 	//Recursively fills your Array sent by reference with templates for the specified branch
 	// optionally specify last compile time (unix time) for a patch job     Array['template']
-	private function get_templates(&$templates, $branch=1, $time=0){ 
+	private function get_templates(&$templates, $branch=1, $time=0){
 		$branch = isset($branch) ? $branch : $this->branch;
 		$branch = preg_replace("/[^A-Za-z0-9 _\-]/", '', $branch );
 		
@@ -354,6 +354,8 @@ EOT;
 
 	// Returns the text/css document for the specified branch
 	public function css( $branch = 1 ){
+		$branch = preg_replace("/\.css$/", '', $branch );
+		$branch = preg_replace("/[^A-Za-z0-9 _\-]/", '', $branch );
 		header ('Content-type: text/css; charset=UTF-8');
 		$css = $this->compile_css($this->css_branch($branch));
 		if($this->debug)

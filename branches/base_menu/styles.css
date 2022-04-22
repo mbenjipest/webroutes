@@ -50,7 +50,7 @@
 			-1px 0 0 0 #000;
 		background:
 			linear-gradient(to bottom right,  rgb(__primary_color_rgb__,.9) 0%, rgb(__secondary_color_rgb__,.9) 100%),
-			url(/resources/leaf-white.svg) left bottom / auto 100% no-repeat;
+			url(../resources/leaf-white.svg) left bottom / auto 100% no-repeat;
 		background-blend-mode: difference;
 		height:100%; overflow:auto;
 		
