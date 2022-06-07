@@ -7,7 +7,7 @@
 
 apiModule.call('documentation','swagger',{});
 //OR
-//https://demo.pestroutes.com/api/documentation/swagger?authenticationKey=88492884d8154febd1057372867c2e34b371d8fb&authenticationToken=6915e71f53708f17dba090febd2df4f9d79364d7
+//https://YOURDOMAIN.pestroutes.com/api/documentation/swagger?authenticationKey=xxx&authenticationToken=xxx
 	</code>
 </section>
 
@@ -21,8 +21,8 @@ apiModule.call('documentation','swagger',{});
 	<code>
 apiModule.loadKeyset('demo',{
 	"base_url":"https://stagingdemo.pestroutes.com",
-	"keys":["88492884d8154febd1057372867c2e34b371d8fb"],
-	"tokens":["6915e71f53708f17dba090febd2df4f9d79364d7"],
+	"keys":["xxx"],
+	"tokens":["xxx"],
 },1);
 //apiModule.setKeyset('demo');
 	</code>

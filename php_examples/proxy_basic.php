@@ -11,8 +11,8 @@ RewriteRule ^(.*)$ index.php?/$1 [L]
 $instance = new Proxy();
 Class Proxy{
 	private static $url   = 'https://stagingdemo.pestroutes.com/api/';
-	private static $key   = '88492884d8154febd1057372867c2e34b371d8fb';
-	private static $token = '6915e71f53708f17dba090febd2df4f9d79364d7';
+	private static $key   = 'x88492884d8154febd1057372867c2e34b371d8fb';
+	private static $token = 'x6915e71f53708f17dba090febd2df4f9d79364d7';
 	
 	// URL handler - Passes parts to function arguments - domain.com/function/arg1/arg2?query=string
 	function __construct(){

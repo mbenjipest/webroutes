@@ -1,4 +1,4 @@
-<strong><p>Confirm payment gateway with office administrator - profiles created for inactive gateways will be inaccessable and unusable!</p></strong>
+<strong><p>Confirm payment gateway with office administrator - profiles created for inactive gateways may be inaccessable and unusable!</p></strong>
 
 <h3>Create an ACH payment profile</h3>
 <button class='run'>Execute</button>

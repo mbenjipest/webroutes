@@ -6,11 +6,6 @@ Class Proxy{
 	private static $token = '1111111111111111111111111111111111111111111111111111111111111111';
 	function __construct(){}
 
-	public static function set_key(){
-		if(!@isset($request['login_token'])){
-			throw new Exception('User must be logged in to use proxy');
-		}
-	}
 	public static function send( $request, $endpoint, $action){
 		try{
 			$request['authenticationKey']  =self::$key;
