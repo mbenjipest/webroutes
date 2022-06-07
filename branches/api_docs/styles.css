@@ -26,6 +26,12 @@
 
 /*<hunk name="Documentation">*/
 	.documentation_nav{
+		position: sticky;
+		top: 0;
+		height: 95vh;
+		padding-bottom: 5em;
+		box-sizing: border-box;
+		overflow-y: auto;
 		display:inline-block; vertical-align: top;
 		background-color: rgba(__bg0_rgb__,.7);
 		text-align:left;
@@ -50,6 +56,7 @@
 	}
 	
 	.documentation{
+		position: relative;
 		margin:1em;
 		text-align:center;
 	}
@@ -87,6 +94,9 @@
 			padding:2em 1em;
 			display:block;
 			margin:0 auto;
+			z-index:3;
+			height:10vh;
+			background: __bg0__;
 		}
 		.documentation_content{
 			display:block;

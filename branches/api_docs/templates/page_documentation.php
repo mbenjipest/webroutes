@@ -23,7 +23,17 @@
 		//$('<pre>'+JSON.stringify(docs,null,"\t")+'</pre>').appendTo(display);
 		display.find('.documentation_content').html(' ');
 		let nav = display.find('.documentation_nav');
-		for(var path in docs.paths){
+		
+		
+		var paths = Object.keys(docs.paths);
+		paths.sort(function(a, b){
+			if(a>b) return 1;
+			if(b>a) return -1;
+			return 0;
+		});
+		for(var i=0,l=paths.length;i<l;++i){
+		//for(var path in docs.paths){
+			let path=paths[i];
 			
 			$(Template.build('documentation_nav_item',{'path':path,...docs.paths[path].post})).appendTo(nav);
 		
