@@ -110,3 +110,50 @@ apiModule.call('customer','create',{
 	});
 }).then(console.log);
 </code>
+
+
+
+<h3>Create a credit card payment profile, test payment, refund payment (Payrix)</h3>
+<button class='run'>Execute</button>
+<code class='example_code'>
+var customerID;
+//paymentProfile/create CC
+apiModule.call('customer','create',{
+	'fname':'billy',
+	'lname':'testman',
+	'officeID':13
+}).then(function(customer){
+	customerID=customer.result;
+	return apiModule.call('paymentProfile', 'create',{
+		"customerID": customerID, //286582
+		"autopay":1,
+		//"billingAddress1": "5003 Quorum Dr",
+		//"billingCity": "Dallas",
+		//"billingState": "TX",
+		//"billingZip": "75252",
+		//"billingCountryID": "US",
+		"paymentMethod": "1", //1:cc, 2:ach
+		"merchantID": "bc81c20b040b18afc9bc5a0f2880ecab",
+		"merchantToken": "t1_tok_628bac7b1becf0e4094e9d6",
+		"gateway": "payrix",//ACH or CC gateway E.G. authorize, nmi, brain, element, payrix
+		'officeID':13
+	});
+}).then(function(){
+	return apiModule.call('payment','create',{
+		'customerID':customerID,
+		'paymentMethod':3,
+		'amount':'1',
+		'doCharge':1,
+		'officeID':13
+	});
+}).then(function(r){
+	return apiModule.call('payment','createRefund',{
+		'paymentID':r.result,
+		'amount':'1',
+		'officeID':13
+	});
+}).then(function(){
+	return apiModule.search('paymentProfile',{'includeData':1,'customerIDs':[customerID],'officeIDs':0});
+})
+.then(console.log);
+</code>

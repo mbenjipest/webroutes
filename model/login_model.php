@@ -102,7 +102,7 @@ Class Login_model{
 	public static function get_endpoints( $user_id ){
 		$query='
 			SELECT IF(ue.endpoint IS NULL, 0, GROUP_CONCAT(ue.endpoint)) AS endpoints
-			FROM user_endpoints ue
+			FROM user_endpoint ue
 			WHERE user_id=:user_id
 		';
 		$params=array();
