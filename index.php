@@ -7,7 +7,7 @@ Class Temp{ // Compiled Templates | CSS Variables | Live Patching | Live Branchi
 	private $url = 'https://fieldroutes.dev/';
 	//private $url = 'https://localhost/';
 	private $source_dir = '';
-	private $branch = 'light';//HEAD
+	private $branch = 'HEAD';//HEAD
 	private $config = [
 		'start_uri'=>'index',
 		'start_page'=>'index',
@@ -252,7 +252,7 @@ EOT;
 		$patch_time = floor($time);
 		
 		$templates=array();
-		$this->get_templates($templates, $branch, $patch_time);
+		$this->get_templates($templates, $this->branch, $patch_time);
 		header ('Content-type: text/javascript; charset=UTF-8');
 		$items='';
 		foreach($templates as $key=>$value){ //                              " from json encode                "
@@ -334,7 +334,10 @@ EOT;
 		$names = scandir($dir);
 		foreach($names as $name){
 			//echo filemtime($dir . '/' . $name) . '|'; echo $name.'|';
-			if(filemtime($dir . '/' . $name) < $time || strlen($name)<=2) continue;
+			if(filemtime($dir . '/' . $name) < $time || strlen($name)<=2){
+				unset($templates[$name]);//Prevent upstream changes from affecting downstream
+				continue;
+			}
 			$temp = explode( '.', $name );
 			$ext = array_pop( $temp ); //remove extension
 			$name = implode( '.', $temp );
