@@ -16,7 +16,7 @@ INSERT INTO `user` (`user_id`, `hash`, `salt`, `username`) VALUES
 (1,	'fffffffff057aaf653a6fa205d9c13662f008d0c3d9ad4d71d5ae639d75f6f280938a8dd3',	'1234567890123456',	'mbenji');
 
 DROP TABLE IF EXISTS `user_endpoints`;
-CREATE TABLE `user_endpoints` (
+CREATE TABLE `user_endpoint` (
   `user_id` bigint unsigned NOT NULL,
   `endpoint` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   KEY `user_id` (`user_id`),
