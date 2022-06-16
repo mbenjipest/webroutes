@@ -70,8 +70,13 @@
 					window.login_token=localStorage.login_token;
 				}
 
+				<?php if(!@isset($build) || $build==false){ ?>
 				// Phone home for new code
-				Template.patch().then( function(){
+				Template.patch()
+				<?php }else{ ?>
+				Promise.resolve()
+				<?php }?>
+				.then( function(){
 					//Add Debug interface
 					display.before( Template.build('patch') );
 					window.debug=function(){$('.debug_panel').toggle();}
