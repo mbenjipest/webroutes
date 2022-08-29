@@ -61,3 +61,64 @@ apiModule.call('customer','create',{
 	});
 };
 </code>
+
+
+
+
+
+<h3>Create a subscription with a addons</h3>
+<button class='run'>Execute</button>
+<code class='example_code'>
+apiModule.call('customer','create',{
+'fname':'Test',
+'lname':'Customer',
+}).then(function(response){
+	let customerID = response.result;
+
+	return apiModule.call('subscription','create',{
+		'customerID': customerID,
+		'serviceID': 1,
+		'initialCharge': '2000',
+		'initialAddons':[
+			{
+				"description":  'Initial Discount',
+				"quantity":     1,
+				"amount":       -1000.01,
+				"productID":    0,
+				"serviceID":    0,
+				"taxable":      1,
+				"creditTo":     1,
+				"unitID":       null
+			}
+		],
+		'serviceCharge': '222.22',
+		'addons':[
+			{
+				"description":  'Recurring Handling Fee',
+				"quantity":     1,
+				"amount":       1.08,
+				"productID":    1,
+				"serviceID":    0,
+				"taxable":      1,
+				"creditTo":     1,
+				"unitID":       null
+			}
+		],
+	});
+}).then(function(r){
+	return apiModule.get('subscription',[r.result]);
+}).then(console.log);
+
+</code>
+
+
+
+
+
+
+
+
+
+
+
+
