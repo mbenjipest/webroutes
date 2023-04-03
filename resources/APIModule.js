@@ -151,17 +151,17 @@ $(function(){
 						if(response[ response['propertyName']+'NoDataExported' ].length==49000){
 							params[ response['idName'] ]={
 								"operator": ">",
-								"value": response[response['idName']+'NoDataExported'][response[response['idName']+'NoDataExported'].length-1]
+								"value": response[response['propertyName']+'NoDataExported'][response[response['propertyName']+'NoDataExported'].length-1]
 							};
 							params['includeData']=0;
 							m.search(type, params,1).then(function(moreIDs){
-								return m.staggeredRequest(type, [...response[response['idName']+'NoDataExported'], ...moreIDs], response['idName']);
+								return m.staggeredRequest(type, [...response[response['propertyName']+'NoDataExported'], ...moreIDs], response['idName']);
 							}).then(function(moreData){
 								resolve([...response[response['propertyNameData']],...moreData]);
 							});
 							
 						}else{
-							m.staggeredRequest(type, response[response['idName']+'NoDataExported'],response['idName']).then(function(moreData){
+							m.staggeredRequest(type, response[response['propertyName']+'NoDataExported'],response['propertyName']).then(function(moreData){
 								resolve([...response[response['propertyNameData']],...moreData]);
 							});
 						}
@@ -169,7 +169,7 @@ $(function(){
 					}else if(response[ response['propertyName'] ].length==50000&&crazy){ //If hit return cap of 50k, recursively requery for more based on lastID
 						params[ response['idName'] ]={
 							"operator": ">",
-							"value": response[response['idName']][response[response['idName']].length-1]
+							"value": response[response['propertyName']][response[response['propertyName']].length-1]
 						};
 						m.search(type, params, 1).then( (moreIDs)=>{
 							resolve([...response[response['idName']], ...moreIDs]);
