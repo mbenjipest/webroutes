@@ -11,9 +11,9 @@
 		<script src="resources/jquery-3.2.1.min.js"></script>
 		<!--<script src="resources/jquery-ui.min.js"></script>-->
 		<!--<link  href="resources/jquery-ui.min.css" rel="stylesheet"/>-->
-		<script src="cordova.js"></script>
+		<!-- <script src="cordova.js"></script>-->
 		<script src="resources/navigation.js"></script>
-		<script src="resources/swagger.js"></script>
+		<!--<script src="resources/swagger.js"></script>-->
 		<script src="resources/APIModule.js"></script>
 		<script src="templates.js"></script>
 		<link  href="css/<?=$branch;?>.css" rel="stylesheet" id="template_css"/>
@@ -23,7 +23,7 @@
 		<!--<link  href="<?= $this->url.'resources/jquery-ui.min.css'; ?>" rel="stylesheet" />-->
 
 		<script src="<?= $this->url.'resources/navigation.js';?>"></script>
-		<script src="<?= $this->url.'resources/swagger.js';?>"></script>
+		<!--<script src="<?= $this->url.'resources/swagger.js';?>"></script>-->
 		<script src="<?= $this->url.'resources/APIModule.js';?>"></script>
 		<script src="<?= $this->url.'templates/'.$branch; ?>"></script>
 		<link  href="<?= $this->url.'css/'      .$branch; ?>.css" rel="stylesheet" id="template_css"/>
@@ -83,15 +83,30 @@
 					
 					//Add Menu
 					display.after(  Template.build('menu')  );
-					
+					function startPage(){
+						var lastPart=location.pathname.split('/').pop();
+						if(typeof Template.templates['page_'+lastPart] !== 'undefined'){
+							return lastPart;
+						}
+						return 'index';
+					}
 					//Try to recover an old navigation state
-					navigation.recover()
+					navigation.recover() //no semi colon on purpose this is a short-circuit
 					|| //Or go to whatever page was specified at compile time
+					<?php if(!@isset($build) || $build==false){ ?>
 					navigation.go(
 						'<?=isset($start_page)?$start_page:'index';?>',
 						<?=isset($start_data)?json_encode($start_data):'{}';?>,
 						'<?=isset($start_uri)?$start_uri:'index';?>'
 					);
+					<?php }else{ ?>
+					navigation.go(
+						startPage(),
+						<?=isset($start_data)?json_encode($start_data):'{}';?>,
+						startPage()
+					);
+					<?php }?>
+					
 				});
 				
 				//highlight JS object function

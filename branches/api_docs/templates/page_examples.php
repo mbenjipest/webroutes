@@ -23,6 +23,7 @@ API documentation on individual endpoints can be found <a class='navigation_anch
 		<a href='#example_proxy' class='example_nav_item'>Proxy front-end requests to middleware</a>
 		<a href='#example_load_key' class='example_nav_item'>Load Keys into apiModule</a>
 		<h4 class='example_nav_header'>Other</h4>
+		<a href='#example_complex_examples' class='example_nav_item'>Complex Examples</a>
 		<a href='#example_old_examples' class='example_nav_item'>Older Examples</a>
 	</nav>
 	
@@ -39,6 +40,8 @@ API documentation on individual endpoints can be found <a class='navigation_anch
 	[[~example_section, {'example':'proxy','title':'Proxy usage example (key obfuscation)'} ]]
 	
 	[[~example_section, {'example':'load_key','title':'Load keys into the JavaScript apiModule'} ]]
+	
+	[[~example_section, {'example':'complex_examples','title':'Complex Examples'} ]]
 	
 	[[~example_section, {'example':'old_examples','title':'Older Examples'} ]]
 </section><script id="[[Template_id]]_driver">

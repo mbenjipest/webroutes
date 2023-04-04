@@ -1,0 +1,1 @@
+Lock out the documentation and require API keys.

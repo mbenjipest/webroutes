@@ -1,0 +1,29 @@
+.unauthorized_text{
+	border:1px solid __fg1__;
+	text-align:center;
+	background-color: __bg0__;
+	padding: 0.5em;
+	margin-bottom: 3em;
+	color:__fg0__;
+}
+
+.popup_unauthorized .page_section{
+	max-width:60em;
+	margin:10em auto 0 auto;
+}
+.popup_unauthorized{
+	position:absolute; top:0;right:0;bottom:0;left:0;
+	background-color:__bg0__;
+}
+.popup_unauthorized .input_guts{
+	width:70%;
+}
+.popup_unauthorized .input_label{
+	width:30%;
+}
+
+.popup_unauthorized .login_button{
+	display:block;
+	width:80%;
+	margin:1em auto;
+}

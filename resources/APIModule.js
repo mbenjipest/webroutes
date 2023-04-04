@@ -7,7 +7,7 @@ $(function(){
 		var m = {};
 		m.currentIndex=0;
 		//localStorage.defaultKeyset='michaelb';
-		var keyset='demo';
+		var keyset='fieldroutes_default';
 		var keysets= {};
 		var keysetUI;
 		
@@ -61,12 +61,14 @@ $(function(){
 				e.preventDefault();
 			});
 			
+			/*
 			//Add demo keyset
-			m.loadKeyset('demo',{
+			m.loadKeyset('fieldroutes_default',{
 				"base_url":"https://stagingdemo.pestroutes.com/api/",
-				"keys":["88492884d8154febd1057372867c2e34b371d8fb"],
-				"tokens":["6915e71f53708f17dba090febd2df4f9d79364d7"],
+				"keys":[""],
+				"tokens":[""],
 			});
+			*/
 			
 			//Restore keys from localStorage
 			if(typeof localStorage.keysets !== 'undefined'){
