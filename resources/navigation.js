@@ -45,12 +45,12 @@ return ( function( element ) {
 	// Hold navigation - Optionally pass custom handlers
 	// Handlers return true to hold, false to bypass hold one time
 	m.hold = function( popstate, internal, beforeunload){
-		popstate_hold    = popstate   || function(){
-			return confirm('Are you sure your want to navigate away from this page?') && m.release()||true;
-		}; internal_hold = internal || function(){
-			return confirm('Are you sure your want to navigate away from this page?') && m.release()||true;
+		popstate_hold    = popstate   || function(){ //when back/forward are used
+			return confirm('Are you sure your want to navigate away from this page?');
+		}; internal_hold = internal || function(){ //when nagivation.go is called
+			return confirm('Are you sure your want to navigate away from this page?');
 		}
-		$(window).on("beforeunload.navigation", beforeunload || function(){
+		$(window).on("beforeunload.navigation", beforeunload || function(){ //page close
 			return "Are you sure you want to navigate away from this page?"; 
 		});
 	};
@@ -66,6 +66,7 @@ return ( function( element ) {
 	//Template.build('page_'+ type )
 	m.go = function(type, data, uri, title){
 		if( internal_hold && !internal_hold() ){ return; }
+		else{ m.release(); }
 		data=data||{};
 		uri=uri||'/';
 		document.title=title||document.title;

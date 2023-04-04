@@ -1,0 +1,67 @@
+<div class='menu'>
+	<a class='navigation_anchor menu_item' href='/home' page='home'>
+		<div class='menu_icon'><span>🏠</span></div>
+		Home
+	</a>
+	<a class='navigation_anchor menu_item' href='/documentation' page='documentation'>
+		<div class='menu_icon'><span>📗</span></div>
+		Endpoints
+	</a>
+	<a class='navigation_anchor menu_item' href='/tools' page='tools'>
+		<div class='menu_icon'><span>🔨</span></div>
+		Tools
+	</a>
+	<a class='navigation_anchor menu_item' href='/examples' page='examples'>
+		<div class='menu_icon'><span>👨‍🏫</span></div>
+		Examples
+	</a>
+	<a class='navigation_anchor menu_item' href='/faq' page='faq'>
+		<div class='menu_icon'><span>❔</span></div>
+		FAQ
+	</a>
+	<a class='menu_item debug'>debug</a>
+	<div class='color_change_dark'>🌙</div>
+	<div class='color_change_light'>☀️</div>
+</div><script id="[[Template_id]]_driver">
+var menu = (function () {
+	var driver= $('#[[Template_id]]_driver');
+	var display = driver.prev(); driver.remove();
+	//var data = Template.data([[Template_id]]);
+
+
+	//hide debug in prod
+	display.find('.debug').remove();
+
+	//debug panel isn't attached to a page anchor
+	display.on('click', '.debug',function(){
+		$('.debug_panel').toggle();
+	});
+
+	//If they have not yet loaded a key, they won't be able to do anything. Display overlay
+	if(apiModule.getKeyset()=='fieldroutes_default'){
+		var holdFunction=function(){
+			//alert("Navigation locked, please insert an API key and token for your client to continue to documentation.");
+			return apiModule.getKeyset()!='fieldroutes_default';
+		};
+		var pageClose=function(){ return true; };
+		navigation.hold(holdFunction,holdFunction,pageClose);
+		display.parent().append( Template.build('unauthorized'));
+	}
+
+	display.on('click', '.color_change_dark',function(){
+		Template.hot_branch('dark');
+	});
+
+	display.on('click', '.color_change_light',function(){
+		Template.hot_branch('light');
+	});
+
+
+	display.on('remove',function (){
+		display.off();
+		delete driver;
+		delete display;
+		Template.data_delete([[Template_id]]);
+	});
+})(Template);
+</script>

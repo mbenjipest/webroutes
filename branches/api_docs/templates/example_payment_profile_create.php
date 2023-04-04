@@ -112,6 +112,14 @@ apiModule.call('customer','create',{
 </code>
 
 
+<h3>Refund a payment</h3>
+<button class='run'>Execute</button>
+<code class='example_code'>
+apiModule.call('payment','createRefund',{
+	'paymentID':10028,
+	'amount':'100',
+});
+</code>
 
 <h3>Create a credit card payment profile, test payment, refund payment (Payrix)</h3>
 <button class='run'>Execute</button>
