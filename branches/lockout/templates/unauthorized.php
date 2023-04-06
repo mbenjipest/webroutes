@@ -17,10 +17,21 @@
 	//var data = Template.data([[Template_id]]);
 
 	display.on('click', '.login_button', function(){
+		var url;
 		try{
-			var url = (new URL(display.find('.apiUrl').val()));
+			url = (new URL(display.find('.apiUrl').val()));
 		}catch(error){
-			return alert('URL invalid');
+			try{
+				let parts = display.find('.apiUrl').val().split('/');
+				if(parts.length==1){
+					url=new URL('https://'+parts[0]+'.fieldroutes.com/api/');
+				}else{
+					return alert('URL invalid');
+				}
+			}catch(error){
+				return alert('URL invalid');
+			}
+			
 		}
 		var subdomain = url.host.split('.')[0];
 		
