@@ -13,7 +13,7 @@
 		<!--<link  href="resources/jquery-ui.min.css" rel="stylesheet"/>-->
 		<!-- <script src="cordova.js"></script>-->
 		<script src="resources/navigation.js"></script>
-		<!--<script src="resources/swagger.js"></script>-->
+		<script src="resources/swagger.js"></script>
 		<script src="resources/APIModule.js"></script>
 		<script src="templates.js"></script>
 		<link  href="css/<?=$branch;?>.css" rel="stylesheet" id="template_css"/>
@@ -23,7 +23,7 @@
 		<!--<link  href="<?= $this->url.'resources/jquery-ui.min.css'; ?>" rel="stylesheet" />-->
 
 		<script src="<?= $this->url.'resources/navigation.js';?>"></script>
-		<!--<script src="<?= $this->url.'resources/swagger.js';?>"></script>-->
+		<script src="<?= $this->url.'resources/swagger.js';?>"></script>
 		<script src="<?= $this->url.'resources/APIModule.js';?>"></script>
 		<script src="<?= $this->url.'templates/'.$branch; ?>"></script>
 		<link  href="<?= $this->url.'css/'      .$branch; ?>.css" rel="stylesheet" id="template_css"/>

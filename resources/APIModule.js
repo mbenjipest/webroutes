@@ -61,14 +61,14 @@ $(function(){
 				e.preventDefault();
 			});
 			
-			/*
+			
 			//Add demo keyset
 			m.loadKeyset('fieldroutes_default',{
 				"base_url":"https://stagingdemo.pestroutes.com/api/",
-				"keys":[""],
-				"tokens":[""],
+				"keys":["x88492884d8154febd1057372867c2e34b371d8fb"],
+				"tokens":["x6915e71f53708f17dba090febd2df4f9d79364d7"],
 			});
-			*/
+			
 			
 			//Restore keys from localStorage
 			if(typeof localStorage.keysets !== 'undefined'){
